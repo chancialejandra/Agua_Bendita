@@ -15,13 +15,13 @@ import java.util.List;
 public class Bebida {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_bebida")
     private int idBebida;
 
     private String descripcion;
 
-    private Number precio;
+    private Integer precio;
 
     private Integer inventario;
 

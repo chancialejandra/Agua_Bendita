@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -13,12 +14,20 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class TipoBebidaRequest {
+public class BebidaRequest {
 
     @NotNull(message = "El id no puede estar vacio")
-    private Integer id_tipo;
+    private Integer id_bebida;
 
-
-   @NotEmpty(message = "La descripcion no puede estar vacia")
+    @NotEmpty(message = "La descripcion no puede estar vacia")
     private String descripcion;
+
+    private Integer inventario;
+
+    @NotNull(message = "El precio no puede estar vacio")
+    private Integer precio;
+
+    @NotNull(message = "El tipo de bebida no puede estar vacio")
+    @Valid
+    private TipoBebidaRequest tipo_bebida;
 }

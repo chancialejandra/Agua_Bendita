@@ -3,14 +3,16 @@ package co.com.poli.pdf.aguabendita.dto.response;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Builder;
-import lombok.Data;
-import org.springframework.http.HttpStatus;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @Builder
+@Setter
+@Getter
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class MessageResponse {
+public class TipoBebidaResponse {
 
-    public HttpStatus status;
-    public String message;
+    private String message;
+    private Integer id_tipo;
+    private String descripcion;
 }

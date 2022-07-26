@@ -15,13 +15,12 @@ import java.util.List;
 public class TipoBebida {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_tipo")
     private int idTipo;
 
     private String descripcion;
 
-//    @OneToMany(mappedBy = "tipo_bebida", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
-//    private List<Bebida> bebida;
+    @OneToMany(mappedBy = "tipoBebida", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    private List<Bebida> bebida;
 
 }
